@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>        
+    </head>
+    <body>
+        <form id="target" action="result.html">
+            <label for="name">name</label> <input id="name" type="name" />
+            <input type="submit" />
+        </form>
+        <script>
+        var t1 = document.getElementById('target');
+        t.addEventListener('submit', function(event){
+            if(document.getElementById('name').value.length === 0){
+                alert('Name 필드의 값이 누락 되었습니다');
+                event.preventDefault();
+            }
+        });
+        </script>
+
+        <p id="result"></p>
+        <input id="target2" type="name" />
+        <script>
+        var t2 = document.getElementById('target2');
+        t2.addEventListener('change', function(event){
+            document.getElementById('result').innerHTML=event.target.value;
+        });
+        </script>
+
+        <p> </p>
+        <input id="target3" type="name" />
+        <script>
+        var t3 = document.getElementById('target3');
+        t3.addEventListener('blur', function(event){
+            alert('blur');  
+        });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<input type="text" id="target"></textarea>
+	<input type="button" id="remove" value="remove">
+	<p id="status"></p>
+
+	<script type="text/javascript">		
+		var handler = function(e){
+			$('#status').text(e.type+Math.random());
+		}
+		$('#target').on('focus blur',handler);
+		$('#target').on('focus',function(e){
+			console.log(1);
+		});
+		
+		$('#remove').on('click',function(e){
+			//$('#target').off('focus blur',handler);
+			$('#target').off('focus',handler);
+			// when using handler, log is still alive. Just removed focus.
+		})
+	</script>
+</body>
+</html>

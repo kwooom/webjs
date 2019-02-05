@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id = 'target1'>
+        first
+    </div>
+    <div id = 'target2'>
+        second
+    </div>
+    <input type="button" value="remove first" id="btn1">
+    <input type="button" value="empty first" id="btn2">
+
+    <script type="text/javascript">
+        $('#btn1').click(function(){
+            $('#target1').remove();
+        })
+        $('#btn2').click(function(){
+            $('#target2').empty();
+        })
+    </script>
+</body>
+</html>

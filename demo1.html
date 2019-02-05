@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<p>time : <span id="time"></span></p>
+	<input type="button" id="execute" value="execute" />
+	<script>
+		document.querySelector('input').addEventListener('click', function(event){
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', './time.php');
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === 4 && xhr.status === 200){
+					document.querySelector('#time').innerHTML = xhr.responseText;
+				}
+			}
+			xhr.send(); 
+		}); 
+	</script> 	
+	
+</body>
+</html>
